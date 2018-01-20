@@ -1,26 +1,76 @@
 import React from 'react';
 import GazeButton from 'react-vr-gaze-button';
-import { View, Text, Pano, AppRegistry, asset, StyleSheet, AmbientLight} from 'react-vr';
+import { View, Text, Pano, AppRegistry, asset, StyleSheet, AmbientLight, VrButton, Animated} from 'react-vr';
 import items1 from "./items1.json";
 import items2 from "./items2.json";
 import levels from "./levels.json";
 import MissionItem from "./MissionItem.js";
+import Timer from './Timer';
+import Button from './Button';
 
 class TimeBender extends React.Component {
-
-  state = {
+constructor(){
+  super();
+  this.state = {
   level: 0,
   GazeButtClicked: false,
-  items: items1
+  items: items1,
+timer: 5,
+status: '',
+fadeAnim: new Animated.Value(1)
   };
+this.startTimer = this.startTimer.bind(this);
+}
 
+componentDidUpdate(){
+
+switch (this.state.status) {
+      case 'started':
+        this.timer;
+        break;
+      case 'stopped':
+      clearInterval(this.timer);
+        break;
+      }
+}
+
+startTimer(){
+  let x = this.state.timer
+  if(x === 0){
+
+    Animated.timing(
+      this.state.fadeAnim,
+      {toValue: 0}
+    ).start();
+
+    this.state.level +=1;
+    // this.setState({intervalId: ''});
+    Animated.timing(
+      this.state.fadeAnim,
+      {toValue: 1}
+    ).start();
+   return this.setState({status: 'stopped', timer: levels[this.state.level].timer});
+
+
+  } else{
+    x -= 1
+    this.setState({timer: x})
+  }
+    }
+
+startGame(){
+
+this.timer = setInterval(this.startTimer,1000);
+this.setState({status: 'started'})
+
+}
 
   render() {
 
     const {GazeButtClicked} = this.state
-
+    const levelIterator = this.state.level+1
     return (
-      <View>
+      <Animated.View style={{opacity: this.state.fadeAnim}}>
         <AmbientLight intensity={ 1.6 }  />
         <Pano source={asset(levels[this.state.level].image)}/>
         <MissionItem
@@ -49,7 +99,9 @@ class TimeBender extends React.Component {
         />
 
         <View style={styles.gazeView}>
-          <GazeButton onClick={() => this.setState({GazeButtClicked: true, level: 1, items: items2})} duration={1000}>
+          <GazeButton onClick={()=> this.startGame()} duration={1000}
+
+            >
             {time => (
               <Text style={styles.gazeText}>
                 {GazeButtClicked ? 'BLAST OFF!' : `START ${time}`}
@@ -58,7 +110,13 @@ class TimeBender extends React.Component {
           </GazeButton>
         </View>
 
-      </View>
+        <View>
+          <Timer {...this.state} />
+      <Button startGame={this.startGame.bind(this)} {...this.state}
+         />
+        </View>
+
+      </Animated.View>
     );
   }
 };
@@ -80,6 +138,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 0.15,
     color: 'red'
-  }
+  },
+  timer:{
+  textAlign: 'center',
+  fontSize: 0.15,
+  color: '#fff',
+  transform: [
+    {translate: [2, 0, -1]}
+  ]
+}
 })
 AppRegistry.registerComponent('TimeBender', () => TimeBender);
