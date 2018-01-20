@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>TimeBender</title>
+    <style>body { margin: 0; }</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  </head>
+  <script src='https://cdn.jsdelivr.net/npm/webvr-polyfill@latest/build/webvr-polyfill.js'></script>
+  <script>
+    var polyfill = new WebVRPolyfill();
+      // Polyfill always provides us with `navigator.getVRDisplays`
+    navigator.getVRDisplays().then(displays => {
+      // If we have a native VRDisplay, or if the polyfill
+      // provided us with a CardboardVRDisplay, use it
+      if (displays.length) {
+        vrDisplay = displays[0];
+        controls = new THREE.VRControls(camera);
+        vrDisplay.requestAnimationFrame(animate);
+      } else {
+        // If we don't have a VRDisplay, we're probably on
+        // a desktop environment, so set up desktop-oriented controls
+        controls = new THREE.OrbitControls(camera);
+        requestAnimationFrame(animate);
+      }
+    });
+  </script>
+</head>
+<body>
+  <!-- When you're ready to deploy your app, update this line to point to your compiled client.bundle.js -->
+  <script src="./client.bundle?platform=vr"></script>
+  <script>
+    // Initialize the React VR application
+    ReactVR.init(
+      // When you're ready to deploy your app, update this line to point to
+      // your compiled index.bundle.js
+      '../index.vr.bundle?platform=vr&dev=true',
+      // Attach it to the body tag
+      document.body
+    );
+  </script>
+</body>
+</html>

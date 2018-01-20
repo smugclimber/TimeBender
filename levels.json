@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Start Screen",
+    "image": "Start_screen.jpg",
+    "audio": "button-click.ogg",
+    "timeElapsed": 0,
+  },
+  {
+      "title": "Museum",
+      "image": "museum.jpg",
+      "audio": "button-click.ogg",
+      "timeElapsed": 0,
+  },
+  {
+      "title": "Island Garden",
+      "image": "island-garden.jpg",
+      "audio": "button-click.ogg",
+      "timeElapsed": 0,
+  }
+]

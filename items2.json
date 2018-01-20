@@ -1,0 +1,50 @@
+[
+  {
+    "title": 0,
+    "source": ["Platform.obj", ""],
+    "texture": "Black_nor.jpg",
+    "translate": [5, -25, -20],
+    "scale": 0.10,
+    "rotate": [0, 0, 0]
+  },
+  {
+    "title": 1,
+    "source": ["BioHazard.obj", ""],
+    "texture": "steel.jpg",
+    "translate": [-2.8, 1.2, -5],
+    "scale": 0.1,
+    "rotate": [90, 0, 0]
+  },
+  {
+    "title": 2,
+    "source": ["hour glass.obj", ""],
+    "texture": "",
+    "translate": [5, -25, -20],
+    "scale": 0.10,
+    "rotate": [0, 0, 0]
+  },
+  {
+    "title": 3,
+    "source": ["Platform.obj", ""],
+    "texture": "Black_nor.jpg",
+    "translate": [5, -25, -20],
+    "scale": 0.10,
+    "rotate": [0, 0, 0]
+  },
+  {
+    "title": 4,
+    "source": ["Platform.obj", ""],
+    "texture": "Black_nor.jpg",
+    "translate": [5, -25, -20],
+    "scale": 0.10,
+    "rotate": [0, 0, 0]
+  },
+  {
+    "title": 5,
+    "source": ["Platform.obj", ""],
+    "texture": "Black_nor.jpg",
+    "translate": [5, -25, -20],
+    "scale": 0.10,
+    "rotate": [0, 0, 0]
+  }
+]
