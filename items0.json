@@ -9,11 +9,11 @@
   },
   {
     "title": 1,
-    "source": ["dna.obj", ""],
-    "texture": "Black_nor.jpg",
-    "translate": [-2.8, 1.2, -5],
-    "scale": 0.025,
-    "rotate": [0, 0, 0]
+    "source": ["Clock 01.obj", "Clock 01.mtl"],
+    "texture": "Clock 01 df.png",
+    "translate": [50, 20, -70],
+    "scale": 0.50,
+    "rotate": [-90, 0, 0]
   },
   {
     "title": 2,

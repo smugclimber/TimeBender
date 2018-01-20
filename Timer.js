@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet } from 'react-vr';
 
 class Timer extends Component{
-
 render(){
     return(
       <View style={styles.Button}>
@@ -11,8 +10,6 @@ render(){
     )
   }
 };
-
-
 const styles= StyleSheet.create({
 Button: {
     backgroundColor: '#fff',
@@ -25,7 +22,6 @@ Button: {
     transform: [
       {translate: [-2, 0, -5]}
     ]
-
   },
   ButtonText: {
     textAlign: 'center',
