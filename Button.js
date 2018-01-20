@@ -31,7 +31,7 @@ export default class Button extends React.Component {
 
           >
         <Text style={this.styles.text}>
-          Start
+          Start Game
         </Text>
       </VrButton>
     );

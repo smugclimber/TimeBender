@@ -50,7 +50,7 @@ constructor(){
   }
 
   startGame(){
-    this.timer = setInterval(this.startTimer,1000);
+    this.timer = setInterval(this.startTimer,500);
     this.setState({status: 'started'})
   }
 
@@ -86,11 +86,11 @@ constructor(){
           scale={this.state.items[2].scale}
         />
         <View style={styles.gazeView}>
-          <GazeButton onClick={()=> this.startGame()} duration={1000}
+          <GazeButton onClick={()=> this.startGame()} duration={500}
             >
             {time => (
               <Text style={styles.gazeText}>
-                {GazeButtClicked ? 'BLAST OFF!' : `START ${time}`}
+                {GazeButtClicked ? 'BLAST OFF!' : `Hidden Next Level btn ${time}`}
               </Text>
             )}
           </GazeButton>
@@ -108,8 +108,8 @@ const styles = StyleSheet.create({
   gazeView:{
     fontSize: 0.3,
     backgroundColor: '#fff',
-    width: 0.5,
-    height: 0.5,
+    width: 0.7,
+    height: 0.7,
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 0.01,
