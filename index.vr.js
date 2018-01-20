@@ -5,13 +5,14 @@ import items1 from "./items1.json";
 import items2 from "./items2.json";
 import levels from "./levels.json";
 import MissionItem from "./MissionItem.js";
+import story from "./story.json"; 
 
 class TimeBender extends React.Component {
 
   state = {
   level: 0,
   GazeButtClicked: false,
-  items: items1
+  items: story
   };
 
 
