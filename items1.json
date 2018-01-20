@@ -5,23 +5,29 @@
     "texture": "Black_nor.jpg",
     "translate": [5, -25, -20],
     "scale": 0.10,
-    "rotate": [0, 0, 0]
+    "rotate": [0, 0, 0],
+    "found": false,
+    "image": "./static_assets/images/DNA_image.png"
   },
   {
     "title": 1,
-    "source": ["dna.obj", ""],
-    "texture": "Black_nor.jpg",
-    "translate": [-2.8, 1.2, -5],
-    "scale": 0.025,
-    "rotate": [0, 0, 0]
+    "source": ["Bender.obj", ""],
+    "texture": "steel.jpg",
+    "translate": [3, -5.6, -7],
+    "scale": 0.2,
+    "rotate": [0, -70, 0],
+    "found": false,
+    "image": "./static_assets/images/DNA_image.png"
   },
   {
     "title": 2,
-    "source": ["Platform.obj", ""],
-    "texture": "Black_nor.jpg",
-    "translate": [5, -25, -20],
-    "scale": 0.10,
-    "rotate": [0, 0, 0]
+    "source": ["alien.obj", "alien.mtl"],
+    "texture": "",
+    "translate": [-3, -5.2, -6],
+    "scale": 0.3,
+    "rotate": [0, 75, 0],
+    "found": false,
+    "image": "./static_assets/images/DNA_image.png"
   },
   {
     "title": 3,
@@ -29,22 +35,8 @@
     "texture": "Black_nor.jpg",
     "translate": [5, -25, -20],
     "scale": 0.10,
-    "rotate": [0, 0, 0]
-  },
-  {
-    "title": 4,
-    "source": ["Platform.obj", ""],
-    "texture": "Black_nor.jpg",
-    "translate": [5, -25, -20],
-    "scale": 0.10,
-    "rotate": [0, 0, 0]
-  },
-  {
-    "title": 5,
-    "source": ["Platform.obj", ""],
-    "texture": "Black_nor.jpg",
-    "translate": [5, -25, -20],
-    "scale": 0.10,
-    "rotate": [0, 0, 0]
+    "rotate": [0, 0, 0],
+    "found": false,
+    "image": "./static_assets/images/DNA_image.png"
   }
 ]

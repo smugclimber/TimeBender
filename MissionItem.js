@@ -8,7 +8,7 @@ const MissionItem = props => {
       <Text
           style={{
             fontSize: 0.3,
-            color: 'black',
+            color: 'green',
             layoutOrigin: [0.5, 0.5],
             transform: [{translate: [props.translate[0], props.translate[1], props.translate[2]]}],
           }}>Item#{props.title}</Text>

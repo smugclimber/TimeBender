@@ -5,7 +5,9 @@
     "texture": "Black_nor.jpg",
     "translate": [5, -25, -20],
     "scale": 0.10,
-    "rotate": [0, 0, 0]
+    "rotate": [0, 0, 0],
+    "found": false,
+    "image": "./static_assets/images/DNA_image.png"
   },
   {
     "title": 1,
@@ -13,15 +15,19 @@
     "texture": "Clock 01 df.png",
     "translate": [50, 20, -70],
     "scale": 0.50,
-    "rotate": [-90, 0, 0]
+    "rotate": [-90, 0, 0],
+    "found": false,
+    "image": "./static_assets/images/DNA_image.png"
   },
   {
     "title": 2,
-    "source": ["Platform.obj", ""],
-    "texture": "Black_nor.jpg",
-    "translate": [5, -25, -20],
-    "scale": 0.10,
-    "rotate": [0, 0, 0]
+    "source": ["theobromine.obj", ""],
+    "texture": "theobromine.jpg",
+    "translate": [-13, -2, -15],
+    "scale": 0.5,
+    "rotate": [90, 0, 0],
+    "found": false,
+    "image": "./static_assets/images/DNA_image.png"
   },
   {
     "title": 3,
@@ -29,22 +35,8 @@
     "texture": "Black_nor.jpg",
     "translate": [5, -25, -20],
     "scale": 0.10,
-    "rotate": [0, 0, 0]
-  },
-  {
-    "title": 4,
-    "source": ["Platform.obj", ""],
-    "texture": "Black_nor.jpg",
-    "translate": [5, -25, -20],
-    "scale": 0.10,
-    "rotate": [0, 0, 0]
-  },
-  {
-    "title": 5,
-    "source": ["Platform.obj", ""],
-    "texture": "Black_nor.jpg",
-    "translate": [5, -25, -20],
-    "scale": 0.10,
-    "rotate": [0, 0, 0]
+    "rotate": [0, 0, 0],
+    "found": false,
+    "image": "./static_assets/images/DNA_image.png"
   }
 ]
