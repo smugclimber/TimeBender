@@ -9,12 +9,18 @@
       "title": "Museum",
       "image": "museum.jpg",
       "audio": "button-click.ogg",
-      "timeElapsed": 0,
+      "timer": 2,
   },
   {
       "title": "Island Garden",
       "image": "island-garden.jpg",
       "audio": "button-click.ogg",
-      "timeElapsed": 0,
-  }
+      "timer": 2,
+  },
+    {
+      "title": "End Game",
+      "image": "End_Game_Scene.jpg",
+      "audio": "button-click.ogg",
+      "timer": 2,
+    },
 ]

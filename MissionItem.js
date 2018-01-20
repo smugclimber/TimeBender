@@ -2,7 +2,6 @@ import React from "react";
 import { View, Model, Text, asset} from 'react-vr';
 
 const MissionItem = props => {
-  console.log("Props source: " + props.rotate);
 
   return(
     <View>
