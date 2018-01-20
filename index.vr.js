@@ -8,6 +8,7 @@ import levels from "./levels.json";
 import MissionItem from "./MissionItem.js";
 import Timer from './Timer';
 import Button from './Button';
+
 class TimeBender extends React.Component {
 constructor(){
   super();
@@ -19,41 +20,38 @@ constructor(){
     status: '',
     fadeAnim: new Animated.Value(1)
   };
-this.startTimer = this.startTimer.bind(this);
-}
-componentDidUpdate(){
-switch (this.state.status) {
-      case 'started':
-        this.timer;
-        break;
-      case 'stopped':
-      clearInterval(this.timer);
-        break;
+  this.startTimer = this.startTimer.bind(this);
+ }
+
+  componentDidUpdate(){
+    switch (this.state.status) {
+        case 'started':
+          this.timer;
+          break;
+        case 'stopped':
+          clearInterval(this.timer);
+          break;
       }
-}
-startTimer(){
-  let x = this.state.timer
-  if(x === 0){
-    Animated.timing(
-      this.state.fadeAnim,
-      {toValue: 0}
-    ).start();
-    this.state.level +=1;
-    // this.setState({intervalId: ''});
-    Animated.timing(
-      this.state.fadeAnim,
-      {toValue: 1}
-    ).start();
-   return this.setState({status: 'stopped', timer: levels[this.state.level].timer});
-  } else{
-    x -= 1
-    this.setState({timer: x})
   }
+
+  startTimer(){
+    let x = this.state.timer
+    if(x === 0){
+      Animated.timing(this.state.fadeAnim, {toValue: 0}).start();
+      this.state.level +=1;
+      Animated.timing(this.state.fadeAnim, {toValue: 1}).start();
+      return this.setState({status: 'stopped', timer: levels[this.state.level].timer});
+    } else{
+      x -= 1
+      this.setState({timer: x})
     }
-startGame(){
-this.timer = setInterval(this.startTimer,1000);
-this.setState({status: 'started'})
-}
+  }
+
+  startGame(){
+    this.timer = setInterval(this.startTimer,1000);
+    this.setState({status: 'started'})
+  }
+
   render() {
     const {GazeButtClicked} = this.state
     const levelIterator = this.state.level+1
@@ -97,13 +95,13 @@ this.setState({status: 'started'})
         </View>
         <View>
           <Timer {...this.state} />
-      <Button startGame={this.startGame.bind(this)} {...this.state}
-         />
+          <Button startGame={this.startGame.bind(this)} {...this.state} />
         </View>
       </Animated.View>
     );
   }
 };
+
 const styles = StyleSheet.create({
   gazeView:{
     fontSize: 0.3,
@@ -117,18 +115,21 @@ const styles = StyleSheet.create({
     borderRadius: 0.25,
     transform: [{translate: [0, 1, -4]}],
   },
+
   gazeText:{
     textAlign: 'center',
     fontSize: 0.15,
     color: 'red'
   },
+
   timer:{
-  textAlign: 'center',
-  fontSize: 0.15,
-  color: '#fff',
-  transform: [
-    {translate: [2, 0, -1]}
-  ]
-}
+    textAlign: 'center',
+    fontSize: 0.15,
+    color: '#fff',
+    transform: [
+      {translate: [2, 0, -1]}
+    ]
+  }
 })
+
 AppRegistry.registerComponent('TimeBender', () => TimeBender);
