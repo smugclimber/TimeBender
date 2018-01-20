@@ -8,6 +8,8 @@ import levels from "./levels.json";
 import MissionItem from "./MissionItem.js";
 import Timer from './Timer';
 import Button from './Button';
+import story from "./story.json";
+
 
 class TimeBender extends React.Component {
 constructor(){

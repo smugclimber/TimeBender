@@ -1,0 +1,50 @@
+[
+  {
+    "title": 0,
+    "source": ["Platform.obj", ""],
+    "texture": "Black_nor.jpg",
+    "translate": [5, -25, -20],
+    "scale": 6,
+    "rotate": [0, 0, 0]
+  },
+  {
+    "title": 1,
+    "source": ["Bender.obj", ""],
+    "texture": "steel.jpg",
+    "translate": [3, 0.6, -7],
+    "scale": 0.2,
+    "rotate": [0, -70, 0]
+  },
+  {
+    "title": 2,
+    "source": ["alien.obj", "alien.mtl"],
+    "texture": "",
+    "translate": [-3, 0.2, -6],
+    "scale": 0.3,
+    "rotate": [0, 75, 0]
+  },
+  {
+    "title": 3,
+    "source": ["Platform.obj", ""],
+    "texture": "Black_nor.jpg",
+    "translate": [5, -25, -20],
+    "scale": 0.10,
+    "rotate": [0, 0, 0]
+  },
+  {
+    "title": 4,
+    "source": ["Platform.obj", ""],
+    "texture": "Black_nor.jpg",
+    "translate": [5, -25, -20],
+    "scale": 0.10,
+    "rotate": [0, 0, 0]
+  },
+  {
+    "title": 5,
+    "source": ["Platform.obj", ""],
+    "texture": "Black_nor.jpg",
+    "translate": [5, -25, -20],
+    "scale": 0.10,
+    "rotate": [0, 0, 0]
+  }
+]

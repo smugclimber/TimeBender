@@ -1,24 +1,20 @@
 [
   {
-      "title": "Start Screen",
-      "image": "Start_screen.jpg",
-      "audio": "button-click.ogg",
-
-  },
-  {
-      "title": "Story Intro",
-      "image": "Story_Intro.jpg",
-      "audio": "button-click.ogg",
-      "timer": 2,
+    "title": "Start Screen",
+    "image": "Story_Intro.jpg",
+    "audio": "button-click.ogg",
+    "timeElapsed": 0,
   },
   {
       "title": "Museum",
       "image": "museum.jpg",
+      "timer": 7,
       "audio": "button-click.ogg",
       "timer": 2,
   },
   {
       "title": "Island Garden",
+      "timer": 8,
       "image": "island-garden.jpg",
       "audio": "button-click.ogg",
       "timer": 2,
