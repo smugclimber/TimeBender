@@ -6,18 +6,11 @@ import items1 from "./items1.json";
 import items2 from "./items2.json";
 import levels from "./levels.json";
 import MissionItem from "./MissionItem.js";
-<<<<<<< HEAD
-import story from "./story.json"; 
-
-class TimeBender extends React.Component {
-
-  state = {
-  level: 0,
-  GazeButtClicked: false,
-  items: story
-=======
 import Timer from './Timer';
 import Button from './Button';
+import story from "./story.json";
+
+
 class TimeBender extends React.Component {
 constructor(){
   super();
