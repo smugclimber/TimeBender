@@ -24,7 +24,7 @@ const MissionItem = props => {
           }}
           source={{obj: asset(props.source[0]), mtl:asset(props.source[1])}}
         texture={asset(props.texture)}
-        lit={true}
+        lit={props.lit}
       />
     </View>
   );

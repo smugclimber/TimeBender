@@ -7,7 +7,8 @@
     "scale": 0.10,
     "rotate": [0, 0, 0],
     "found": false,
-    "image": "./static_assets/images/DNA_image.png"
+    "image": "./static_assets/images/DNA_image.png",
+    "lit": true
   },
   {
     "title": 0,
@@ -17,7 +18,8 @@
     "scale": 0.10,
     "rotate": [0, 0, 0],
     "found": false,
-    "image": "./static_assets/images/DNA_image.png"
+    "image": "./static_assets/images/DNA_image.png",
+    "lit": true
   },
   {
     "title": 0,
@@ -27,7 +29,8 @@
     "scale": 0.10,
     "rotate": [0, 0, 0],
     "found": false,
-    "image": "./static_assets/images/DNA_image.png"
+    "image": "./static_assets/images/DNA_image.png",
+    "lit": true
   },
   {
     "title": 0,
@@ -37,6 +40,7 @@
     "scale": 0.10,
     "rotate": [0, 0, 0],
     "found": false,
-    "image": "./static_assets/images/DNA_image.png"
+    "image": "./static_assets/images/DNA_image.png",
+    "lit": true
   },
 ]

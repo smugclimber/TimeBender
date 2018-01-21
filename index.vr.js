@@ -106,6 +106,7 @@ _toggleDisplay = this.toggleDisplay.bind(this);
             scale={this.state.items[0].scale}
             found={this.state.items[0].found}
             image={this.state.items[0].image}
+            lit={this.state.items[0].lit}
           />
           <MissionItem
             title={this.state.items[1].title}
@@ -116,6 +117,7 @@ _toggleDisplay = this.toggleDisplay.bind(this);
             scale={this.state.items[1].scale}
             found={this.state.items[1].found}
             image={this.state.items[1].image}
+            lit={this.state.items[1].lit}
           />
           <MissionItem
             title={this.state.items[2].title}
@@ -126,6 +128,7 @@ _toggleDisplay = this.toggleDisplay.bind(this);
             scale={this.state.items[2].scale}
             found={this.state.items[2].found}
             image={this.state.items[2].image}
+            lit={this.state.items[2].lit}
           />
           <MissionItem
             title={this.state.items[3].title}
@@ -136,6 +139,7 @@ _toggleDisplay = this.toggleDisplay.bind(this);
             scale={this.state.items[3].scale}
             found={this.state.items[3].found}
             image={this.state.items[3].image}
+            lit={this.state.items[3].lit}
           />
           <View style={styles.gazeView}>
             <GazeButton onClick={()=> this.startGame()} duration={500}
