@@ -10,25 +10,22 @@ import MissionItem from "./MissionItem.js";
 import Timer from './Timer';
 import Button from './Button';
 
-const itemsArray = [items0, items1, items2, items3]
-const x = 0
-
+const itemsArray = [items0, items1, items2, items3];
 
 class TimeBender extends React.Component {
-constructor(){
-  super();
-  this.state = {
+
+state = {
       level: 0,
       GazeButtClicked: false,
-      items: itemsArray[x],
+      items: items0,
       timer: 2,
       status: '',
       fadeAnim: new Animated.Value(1),
       currentItem: 1,
       deviceConnected: false
     };
-    this.startTimer = this.startTimer.bind(this);
-   }
+
+startTimer = this.startTimer.bind(this);
 
   componentDidUpdate(){
     switch (this.state.status) {
@@ -54,7 +51,7 @@ constructor(){
       this.state.fadeAnim,
       {toValue: 1}
     ).start();
-   return this.setState({status: 'stopped', timer: levels[this.state.level].timer, items: itemsArray[x+1]});
+   return this.setState({status: 'stopped', timer: levels[this.state.level].timer, items: itemsArray[this.state.level]});
   } else{
     x -= 1
     this.setState({timer: x})
@@ -67,6 +64,7 @@ constructor(){
   }
 
   render() {
+    console.log("level: "+ this.state.level)
     const {GazeButtClicked} = this.state
     const levelIterator = this.state.level+1
     return (
