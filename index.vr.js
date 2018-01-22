@@ -6,7 +6,6 @@ import items1 from "./items1.json";
 import items2 from "./items2.json";
 import items3 from "./items3.json";
 import levels from "./levels.json";
-import MissionItem from "./MissionItem.js";
 import TimeConsole from "./TimeConsole.js";
 import Timer from './Timer';
 import Button from './Button';
@@ -15,7 +14,6 @@ import MissionItemExpirZero from './MissionItemExpirZero';
 import MissionItemExpirOne from './MissionItemExpirOne';
 import MissionItemExpirTwo from './MissionItemExpirTwo';
 import Score from './Score';
-
 
 const vrTextboxContent =
   'The game Time Console is not available!';
@@ -213,7 +211,7 @@ increment(){
 
         <View style={styles.triggerContainer}>
           <VrButton style={styles.triggerButton} onEnter={this._toggleDisplay}>
-            <Text style={styles.triggerText}>AMPLIFY!</Text>
+            <Text style={styles.triggerText}>EXPAND CONSOLE</Text>
           </VrButton>
         </View>
 
@@ -368,36 +366,34 @@ const styles = StyleSheet.create({
     color: 'red'
   },
 
-  planeStyle:{
-    color: 'yellow',
-    transform: [{translate: [1, 2, -5]}]
-  },
-
   timer:{
     textAlign: 'center',
     fontSize: 0.15,
     color: '#fff',
-    transform: [{translate: [2, 0, -1]}]
+    transform: [{translate: [2, 0, -4]}]
   },
 
   rootView: {
     layoutOrigin: [0.5, 0.5],
     position: 'absolute',
   },
+
   triggerContainer: {
-    transform: [{translate: [0.75, -3.4, -3]}]
+    transform: [{translate: [0.24, -3.3, -4]}]
   },
+
   triggerButton: {
-    transform: [{rotateX: -35}],
+    transform: [{rotateX: -45}],
     borderRadius: 0.05,
-    height: 0.2,
-    width: 0.5,
+    height: 0.4,
+    width: 0.7,
     backgroundColor: '#F00',
     justifyContent: 'center',
   },
+
   triggerText: {
     alignSelf: 'center',
-    fontSize: 0.1,
+    fontSize: 0.15,
     textAlign: 'center',
     textAlignVertical: 'center',
   },

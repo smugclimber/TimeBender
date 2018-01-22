@@ -25,7 +25,7 @@ const TimeConsole = props => {
         <Text style={{ fontSize: '25pt', color: 'red', transform: [{translate: [2, -3, -3]}] }} >Have You Seen Me?</Text>
       </View>
       <View style={{display:'inline'}}>
-        <Image style={{width: 1, transform: [{translate: [2.3, -2.8, -4]}], height: 1}} source={asset('DNA_image.png')} />
+        <Image style={{width: 1, transform: [{translate: [1.9, -2.5, -4]}], height: 1}} source={asset('DNA_image.png')} />
       </View>
     </View>
   );

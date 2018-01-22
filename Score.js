@@ -23,20 +23,21 @@ const styles= StyleSheet.create({
     },
 Button: {
     backgroundColor: '#fff',
-    borderRadius: 0.25,
-    width: 4,
-    height: 1,
-    alignItems: 'center',
+    borderRadius: 0.05,
+    width: 1.3,
+    height: 0.3,
     justifyContent: 'center',
-    borderWidth: 0.1,
+    borderWidth: 0.025,
     borderColor: 'red',
     transform: [
-      {translate: [-2, 0, -5]}
+      {translate: [0.15, -2.05, -5]},
+    {rotateX: -45},
     ]
   },
   ButtonText: {
-    textAlign: 'center',
-    fontSize: 0.5,
+    margin: 0.05,
+    textAlign: 'left',
+    fontSize: 0.2,
     color: '#000'
   }
 });

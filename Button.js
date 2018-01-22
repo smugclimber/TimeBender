@@ -11,19 +11,22 @@ export default class Button extends React.Component {
     super();
     this.styles = StyleSheet.create({
       button: {
-            margin: 0.05,
-        height: 0.4,
-        backgroundColor: 'red',
+        margin: 0.05,
+        height: 0.5,
+        width: 1,
+        borderRadius: 0.05,
+        backgroundColor: 'green',
         transform: [
-          {translate: [-2, 0, -5]}
+          {translate: [0.03, -2.20, -5]},
+          {rotateX: -45},
         ]
         },
       text: {
-            fontSize: 0.3,
+            fontSize: 0.2,
             textAlign: 'center',
       },
       });
-  }
+    }
   render() {
     return (
       <VrButton style={this.styles.button}
@@ -31,7 +34,7 @@ export default class Button extends React.Component {
 
           >
         <Text style={this.styles.text}>
-          Start Game
+          START GAME
         </Text>
       </VrButton>
     );
