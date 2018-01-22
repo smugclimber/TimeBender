@@ -11,8 +11,10 @@ import TimeConsole from "./TimeConsole.js";
 import Timer from './Timer';
 import Button from './Button';
 import TextboxVr from './TextboxVr';
-import MissionItemExpir from './MissionItemExpir';
-import Score from './Score.js';
+import MissionItemExpirZero from './MissionItemExpirZero';
+import MissionItemExpirOne from './MissionItemExpirOne';
+import MissionItemExpirTwo from './MissionItemExpirTwo';
+import Score from './Score';
 
 
 const vrTextboxContent =
@@ -147,6 +149,37 @@ class TimeBender extends React.Component {
    return this.setState({status: 'stopped', timer: levels[this.state.level].timer, items: itemsArray[this.state.level]});
   }
 
+  //begin object gaze button functions
+  animateProgress() {
+    this.timeout = setTimeout(this.onGaze, 1000);
+    // begin animation
+  }
+
+  stopProgress() {
+    clearTimeout(this.timeout);
+    this.timeout = null;
+    // end animation
+  }
+
+  onGaze(){
+  //set state which sets opacity? set opacity?
+  console.log("helloo")
+  this.state.score +=1;
+
+  this.setState({visible: 'inactive'})
+//  this.toggleDisplay()
+if(this.state.score == 1 && this.state.status == 'started'){
+  this.setState({win: true, timer: 0, status: 'stopped'})
+  }
+}
+//end item disappear button
+
+increment(){
+  this.state.level +=1;
+
+ return this.setState({status: 'stopped', timer: levels[this.state.level].timer, items: itemsArray[this.state.level]});
+}
+
   render() {
     console.log("Level is: "+this.state.level)
     let transition;
@@ -210,7 +243,8 @@ class TimeBender extends React.Component {
           </Animated.View>
 
           <TimeConsole/>
-          <MissionItemExpir
+          <Pano source={asset(levels[this.state.level].image)}/>
+          <MissionItemExpirZero
             state={this.state}
             title={this.state.items[0].title}
             source={this.state.items[0].source}
@@ -225,8 +259,8 @@ class TimeBender extends React.Component {
             onExit={ () => this.stopProgress() }
             onClick={ () => this.onGaze() }
           />
-          <MissionItemExpir
-            state={this.state}
+        <MissionItemExpirOne
+          state={this.state}
             title={this.state.items[1].title}
             source={this.state.items[1].source}
             texture={this.state.items[1].texture}
@@ -238,9 +272,9 @@ class TimeBender extends React.Component {
             onEnter={ () => this.animateProgress() }
             onExit={ () => this.stopProgress() }
             onClick={ () => this.onGaze() }
-            />
-          <MissionItemExpir
-            state={this.state}
+          />
+        <MissionItemExpirTwo
+          state={this.state}
             title={this.state.items[2].title}
             source={this.state.items[2].source}
             texture={this.state.items[2].texture}
@@ -254,6 +288,8 @@ class TimeBender extends React.Component {
             onExit={ () => this.stopProgress() }
             onClick={ () => this.onGaze() }
           />
+
+
           <View>
             { this.state.win ?
               <View style={styles.gazeView}>
