@@ -1,54 +1,63 @@
 import React from 'react';
 import GazeButton from 'react-vr-gaze-button';
-import { View, Text, Pano, AppRegistry, Plane, asset, Image, StyleSheet, AmbientLight, VrButton, Animated, NativeModules, VrHeadModel} from 'react-vr';
+import { View, Text, Pano, AppRegistry, Plane, asset, StyleSheet, AmbientLight, VrButton, Animated, NativeModules, VrHeadModel} from 'react-vr';
 import items0 from "./items0.json";
 import items1 from "./items1.json";
 import items2 from "./items2.json";
 import items3 from "./items3.json";
 import levels from "./levels.json";
 import MissionItem from "./MissionItem.js";
-import TimeConsole from "./TimeConsole.js";
 import Timer from './Timer';
 import Button from './Button';
 import TextboxVr from './TextboxVr';
-import MissionItemExpir from './MissionItemExpir';
-import Score from './Score.js';
+import MissionItemExpirZero from './MissionItemExpirZero';
+import MissionItemExpirOne from './MissionItemExpirOne';
+import MissionItemExpirTwo from './MissionItemExpirTwo';
+import Score from './Score';
 
 
 const vrTextboxContent =
   'The game Time Console is not available!';
-
 const itemsArray = [items0, items1, items2, items3];
 
 class TimeBender extends React.Component {
-state = {
+constructor(){
+  super()
+this.state = {
       level: 0,
       GazeButtClicked: false,
       items: items0,
-      timer: 6,
+      timer: 10,
       status: '',
       fadeAnim: new Animated.Value(1),
       currentItem: 1,
       deviceConnected: false,
       renderVrTextbox: false,
       visible: 'active',
+
       score: 0,
       win: false
     };
 
+this.animateProgress = this.animateProgress.bind(this)
+this.stopProgress = this.stopProgress.bind(this)
+this.onGaze = this.onGaze.bind(this)
+}
+
 startTimer = this.startTimer.bind(this);
 _toggleDisplay = this.toggleDisplay.bind(this);
-
-animateProgress = this.animateProgress.bind(this);
-stopProgress = this.stopProgress.bind(this);
-onGaze = this.onGaze.bind(this);
 
    toggleDisplay() {
     if (VrHeadModel.inVR()) {
       this.setState({renderVrTextbox: !this.state.renderVrTextbox});
     } else {
       // Not in VR, so let's use the dom overlay!
-      NativeModules.DomOverlayModule.openOverlay(this.state.items);
+      const statePieces = {
+        items: this.state.items,
+        visible: this.state.visible
+      }
+      NativeModules.DomOverlayModule.openOverlay(statePieces);
+
     }
   }
 
@@ -70,6 +79,7 @@ onGaze = this.onGaze.bind(this);
       this.state.fadeAnim,
       {toValue: 0}
     ).start();
+
     Animated.timing(
       this.state.fadeAnim,
       {toValue: 1}
@@ -86,8 +96,8 @@ onGaze = this.onGaze.bind(this);
     this.setState({status: 'started'})
   }
 
+  //begin object gaze button functions
   animateProgress() {
-    console.log("Progress helloo");
     this.timeout = setTimeout(this.onGaze, 1000);
     // begin animation
   }
@@ -100,36 +110,40 @@ onGaze = this.onGaze.bind(this);
 
   onGaze(){
   //set state which sets opacity? set opacity?
-    console.log("helloo");
-    this.state.score +=1;
-    this.setState({visible: 'inactive'})
-  //  this.toggleDisplay()
-  if(this.state.score == 1 && this.state.status == 'started'){
-    this.setState({win: true, timer: 0, status: 'stopped'})
-    }
-  }
+  console.log("helloo")
+  this.state.score +=1;
 
-  increment(){
-    this.state.level +=1;
-   return this.setState({status: 'stopped', timer: levels[this.state.level].timer, items: itemsArray[this.state.level]});
+  this.setState({visible: 'inactive'})
+//  this.toggleDisplay()
+if(this.state.score == 1 && this.state.status == 'started'){
+  this.setState({win: true, timer: 0, status: 'stopped'})
   }
+}
+//end item disappear button
+
+increment(){
+  this.state.level +=1;
+
+ return this.setState({status: 'stopped', timer: levels[this.state.level].timer, items: itemsArray[this.state.level]});
+}
 
   render() {
+    console.log("level: "+ this.state.level)
     const {GazeButtClicked} = this.state
     return (
       <View style={styles.rootView}>
 
         <View style={styles.triggerContainer}>
-          <VrButton style={styles.triggerButton} onEnter={this._toggleDisplay}>
-            <Text style={styles.triggerText}>AMPLIFY!</Text>
+          <VrButton style={styles.triggerButton} onClick={this._toggleDisplay}>
+            <Text style={styles.triggerText}>:Activate: Time Console</Text>
           </VrButton>
         </View>
 
         {this.state.renderVrTextbox && <TextboxVr text={vrTextboxContent} />}
+        <Animated.View style={{opacity: this.state.fadeAnim}}>
           <AmbientLight intensity={ 1.6 }  />
           <Pano source={asset(levels[this.state.level].image)}/>
-          <TimeConsole/>
-          <MissionItemExpir
+          <MissionItemExpirZero
             state={this.state}
             title={this.state.items[0].title}
             source={this.state.items[0].source}
@@ -139,13 +153,12 @@ onGaze = this.onGaze.bind(this);
             scale={this.state.items[0].scale}
             found={this.state.items[0].found}
             image={this.state.items[0].image}
-            lit={this.state.items[0].lit}
             onEnter={ () => this.animateProgress() }
             onExit={ () => this.stopProgress() }
             onClick={ () => this.onGaze() }
           />
-          <MissionItemExpir
-            state={this.state}
+        <MissionItemExpirOne
+          state={this.state}
             title={this.state.items[1].title}
             source={this.state.items[1].source}
             texture={this.state.items[1].texture}
@@ -157,9 +170,9 @@ onGaze = this.onGaze.bind(this);
             onEnter={ () => this.animateProgress() }
             onExit={ () => this.stopProgress() }
             onClick={ () => this.onGaze() }
-            />
-          <MissionItemExpir
-            state={this.state}
+          />
+        <MissionItemExpirTwo
+          state={this.state}
             title={this.state.items[2].title}
             source={this.state.items[2].source}
             texture={this.state.items[2].texture}
@@ -168,11 +181,12 @@ onGaze = this.onGaze.bind(this);
             scale={this.state.items[2].scale}
             found={this.state.items[2].found}
             image={this.state.items[2].image}
-            lit={this.state.items[2].lit}
             onEnter={ () => this.animateProgress() }
             onExit={ () => this.stopProgress() }
             onClick={ () => this.onGaze() }
           />
+
+
           <View>
             { this.state.win ?
               <View style={styles.gazeView}>
@@ -185,15 +199,16 @@ onGaze = this.onGaze.bind(this);
                     )}
                   </GazeButton>
                 </View>
-                  :
-            <View>
-            </View>
-              }
-              <Score score={this.state.score} />
-              <Timer timer={this.state.timer} score={this.state.score}{...this.state} />
-            <Button startGame={this.startGame.bind(this)} {...this.state} />
+          :
+        <View>
         </View>
-    </View>
+      }
+            <Score score={this.state.score} />
+            <Timer timer={this.state.timer} score={this.state.score}{...this.state} />
+            <Button startGame={this.startGame.bind(this)} {...this.state} />
+          </View>
+        </Animated.View>
+      </View>
     );
   }
 };
@@ -211,13 +226,6 @@ const styles = StyleSheet.create({
     borderRadius: 0.25,
     transform: [{translate: [2, 2, -4]}],
   },
-
-  imageStyle:{
-    width: 50,
-    height: 50,
-    transform: [{translate: [1, 2, -5]}]
-  },
-
   invisiGaze:{
     display: 'none',
     fontSize: 0.3,
@@ -268,13 +276,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   triggerContainer: {
-    transform: [{translate: [0.75, -3.4, -3]}]
+    transform: [{rotateY: 0}, {translate: [0.75, -3, -3]}]
   },
   triggerButton: {
-    transform: [{rotateX: -35}],
     borderRadius: 0.05,
-    height: 0.2,
-    width: 0.5,
+    height: 0.4,
+    width: 0.4,
     backgroundColor: '#F00',
     justifyContent: 'center',
   },
