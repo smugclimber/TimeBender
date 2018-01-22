@@ -15,6 +15,7 @@ import MissionItemExpirZero from './MissionItemExpirZero';
 import MissionItemExpirOne from './MissionItemExpirOne';
 import MissionItemExpirTwo from './MissionItemExpirTwo';
 import Score from './Score';
+import StartButton from './StartButton';
 
 
 const vrTextboxContent =
@@ -48,10 +49,12 @@ class TimeBender extends React.Component {
     stopProgress = this.stopProgress.bind(this);
     onGaze = this.onGaze.bind(this);
     rotate = this.rotate.bind(this);
+    start = this.start.bind(this);
 
-   componentDidMount() {
-      this.rotate();
-    }
+   // componentDidMount() {
+   //    this.rotate();
+   //  }
+
 
    rotate() {
       const rando = Math.floor(Math.random() * 7);
@@ -119,6 +122,14 @@ class TimeBender extends React.Component {
     this.timer = setInterval(this.startTimer,1000);
     this.setState({status: 'started'})
     this.setState({introduced:true});
+  }
+
+  start(){
+   
+   level = (this.state.level + 1)
+   
+   this.setState({level: level})
+
   }
 
   animateProgress() {
@@ -306,9 +317,21 @@ increment(){
             <View>
             </View>
               }
-              <Score score={this.state.score} />
+              <View>
+              {(this.state.level === 0) ?
+                starter = 
+                <View>
+                <StartButton start={this.start.bind(this)} {...this.state} />
+                </View>
+                :
+                starter = <View>
+                <Score score={this.state.score} />
               <Timer timer={this.state.timer} score={this.state.score}{...this.state} />
             <Button startGame={this.startGame.bind(this)} {...this.state} />
+            </View>
+          }
+          </View>
+
         </View>
     </View>
     );
