@@ -1,46 +1,38 @@
 [
   {
-    "title": 0,
-    "source": ["Platform.obj", ""],
-    "texture": "Black_nor.jpg",
-    "translate": [5, -25, -20],
-    "scale": 0.10,
-    "rotate": [0, 0, 0],
-    "found": false,
-    "image": "./static_assets/images/DNA_image.png",
-    "lit": true
-  },
-  {
-    "title": 1,
+    "title": "Clock",
     "source": ["Clock 01.obj", "Clock 01.mtl"],
     "texture": "Clock 01 df.png",
     "translate": [50, 20, -70],
     "scale": 0.50,
     "rotate": [-90, 0, 0],
     "found": false,
-    "image": "./static_assets/images/DNA_image.png",
+    "image": "./../static_assets/images/bomb.png",
+    "consoleImage": "./static_assets/images/bomb.png",
     "lit": true
   },
   {
-    "title": 2,
+    "title": "Theobromine",
     "source": ["theobromine.obj", ""],
     "texture": "theobromine.jpg",
     "translate": [-13, -2, -15],
     "scale": 0.5,
     "rotate": [90, 0, 0],
     "found": false,
-    "image": "./static_assets/images/DNA_image.png",
+    "image": "./../static_assets/images/hour glass.png",
+    "consoleImage": "./static_assets/images/hour glass.png",
     "lit": true
   },
   {
     "title": 3,
-    "source": ["scientist_projection.obj", "scientist_projection.mtl"],
-    "texture": "",
+    "source": ["retro_rocket.obj", ""],
+    "texture": "steel.jpg",
     "translate": [15, 1, -20],
-    "scale": 0.2,
+    "scale": 0.005,
     "rotate": [-80, 0, 0],
     "found": false,
-    "image": "./static_assets/images/DNA_image.png",
+    "image": "./../static_assets/images/cotter-pin.png",
+    "consoleImage": "./static_assets/images/cotter-pin.png",
     "lit": false
   }
 ]

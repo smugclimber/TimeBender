@@ -1,16 +1,5 @@
 [
   {
-    "title": 0,
-    "source": ["Platform.obj", ""],
-    "texture": "Black_nor.jpg",
-    "translate": [5, -25, -20],
-    "scale": 0.10,
-    "rotate": [0, 0, 0],
-    "found": false,
-    "image": "./static_assets/images/DNA_image.png",
-    "lit": true
-  },
-  {
     "title": 1,
     "source": ["bomb.obj", "bomb.mtl"],
     "texture": "",
@@ -18,7 +7,7 @@
     "scale": 0.50,
     "rotate": [0, 0, 0],
     "found": false,
-    "image": "./static_assets/images/DNA_image.png",
+    "image": "./../static_assets/images/DNA_image.png",
     "lit": true
   },
   {
@@ -29,7 +18,7 @@
     "scale": 0.25,
     "rotate": [0, 0, 0],
     "found": false,
-    "image": "./static_assets/images/DNA_image.png",
+    "image": "./../static_assets/images/DNA_image.png",
     "lit": true
   },
   {
@@ -40,7 +29,7 @@
     "scale": 0.10,
     "rotate": [0, 0, 0],
     "found": false,
-    "image": "./static_assets/images/DNA_image.png",
+    "image": "./../static_assets/images/DNA_image.png",
     "lit": true
   }
 ]
