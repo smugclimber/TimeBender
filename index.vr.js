@@ -7,16 +7,6 @@ import items2 from "./items2.json";
 import items3 from "./items3.json";
 import levels from "./levels.json";
 import TimeConsole from "./TimeConsole.js";
-<<<<<<< HEAD
-import Timer from './Timer';
-import Button from './Button';
-import TextboxVr from './TextboxVr';
-import MissionItemExpirZero from './MissionItemExpirZero';
-import MissionItemExpirOne from './MissionItemExpirOne';
-import MissionItemExpirTwo from './MissionItemExpirTwo';
-import Score from './Score';
-import StartButton from './StartButton';
-=======
 import Timer from './Timer.js';
 import Button from './Button.js';
 import TextboxVr from './TextboxVr.js';
@@ -50,7 +40,6 @@ import StartButton from './StartButton.js';
     //     <Button startGame={this.startGame.bind(this)} {...this.state} />
     //   </View>
     // }
->>>>>>> temporary
 
 const vrTextboxContent =
   'The game Time Console is not available!';
@@ -78,18 +67,6 @@ class TimeBender extends React.Component {
     startTimer = this.startTimer.bind(this);
     _toggleDisplay = this.toggleDisplay.bind(this);
     lastUpdate = Date.now();
-<<<<<<< HEAD
-    animateProgress = this.animateProgress.bind(this);
-    stopProgress = this.stopProgress.bind(this);
-    onGaze = this.onGaze.bind(this);
-    rotate = this.rotate.bind(this);
-    start = this.start.bind(this);
-
-   // componentDidMount() {
-   //    this.rotate();
-   //  }
-
-=======
 
     stopProgressZero = this.stopProgress.bind(this);
     onGazeZero = this.onGazeZero.bind(this);
@@ -98,7 +75,6 @@ class TimeBender extends React.Component {
     animateProgressOne = this.animateProgressOne.bind(this);
     onGazeTwo = this.onGazeTwo.bind(this);
     animateProgressTwo = this.animateProgressTwo.bind(this);
->>>>>>> temporary
 
     rotate = this.rotate.bind(this);
     start = this.start.bind(this);
@@ -172,22 +148,10 @@ class TimeBender extends React.Component {
     this.setState({status: 'started'})
     this.setState({introduced:true});
   }
-<<<<<<< HEAD
-
-  start(){
-   
-   level = (this.state.level + 1)
-   
-   this.setState({level: level})
-
-  }
-
-=======
   start(){
    level = (this.state.level += 1)
    this.setState({level: level})
   }
->>>>>>> temporary
   animateProgress() {
     console.log("Progress helloo");
     this.timeout = setTimeout(this.onGaze, 1000);
@@ -379,13 +343,8 @@ class TimeBender extends React.Component {
             </View>
               }
               <View>
-<<<<<<< HEAD
-              {(this.state.level === 0) ?
-                starter = 
-=======
               {(this.state.level === 0) || (this.state.level === 1) ?
                 starter =
->>>>>>> temporary
                 <View>
                 <StartButton start={this.start.bind(this)} {...this.state} />
                 </View>
@@ -397,10 +356,6 @@ class TimeBender extends React.Component {
             </View>
           }
           </View>
-<<<<<<< HEAD
-
-=======
->>>>>>> temporary
         </View>
     </View>
     );

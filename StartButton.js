@@ -5,10 +5,6 @@ import {
   VrButton,
   asset,
 } from 'react-vr';
-<<<<<<< HEAD
-
-=======
->>>>>>> temporary
 export default class StartButton extends React.Component {
   constructor() {
     super();
@@ -25,11 +21,7 @@ export default class StartButton extends React.Component {
             fontSize: 0.3,
             textAlign: 'center',
       },
-<<<<<<< HEAD
-      });
-=======
     });
->>>>>>> temporary
   }
   render() {
     return (
@@ -37,11 +29,7 @@ export default class StartButton extends React.Component {
         onClick={this.props.start}
           >
         <Text style={this.styles.text}>
-<<<<<<< HEAD
-          Start Button
-=======
           Start Game
->>>>>>> temporary
         </Text>
       </VrButton>
     );
