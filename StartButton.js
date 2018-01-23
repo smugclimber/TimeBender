@@ -5,36 +5,31 @@ import {
   VrButton,
   asset,
 } from 'react-vr';
-
-export default class Button extends React.Component {
+export default class StartButton extends React.Component {
   constructor() {
     super();
     this.styles = StyleSheet.create({
       button: {
-        margin: 0.05,
-        height: 0.5,
-        width: 1,
-        borderRadius: 0.05,
-        backgroundColor: 'green',
+            margin: 0.05,
+        height: 0.4,
+        backgroundColor: 'red',
         transform: [
-          {translate: [0.03, -2.20, -5]},
-          {rotateX: -45},
+          {translate: [-2, 0, -5]}
         ]
         },
       text: {
-            fontSize: 0.2,
+            fontSize: 0.3,
             textAlign: 'center',
       },
-      });
-    }
+    });
+  }
   render() {
     return (
       <VrButton style={this.styles.button}
-        onClick={this.props.startGame}
-
+        onClick={this.props.start}
           >
         <Text style={this.styles.text}>
-          START LEVEL
+          Start Game
         </Text>
       </VrButton>
     );

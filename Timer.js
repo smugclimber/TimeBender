@@ -19,30 +19,31 @@ const Timer = props => {
 };
 const styles= StyleSheet.create({
   ButtonRed: {
-      backgroundColor: 'red',
-      borderRadius: 0.25,
-      width: 4,
-      height: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderWidth: 0.1,
-      borderColor: 'red',
-      transform: [
-        {translate: [-2, 0, -5]}
-      ]
-    },
-Button: {
-    backgroundColor: '#fff',
-    margin: 0.05,
+    backgroundColor: 'red',
     borderRadius: 0.05,
-    width: 1.3,
+    width: 1.5,
     height: 0.3,
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 0.025,
     borderColor: 'red',
     transform: [
-      {translate: [0.15, -1.35, -5]},
+      {translate: [0.18, -1.35, -5]},
+      {rotateX: -45},
+    ]
+  },
+Button: {
+    backgroundColor: '#fff',
+    margin: 0.05,
+    borderRadius: 0.05,
+    width: 1.5,
+    height: 0.3,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 0.025,
+    borderColor: 'red',
+    transform: [
+      {translate: [0.18, -1.35, -5]},
     {rotateX: -45},
     ]
   },
