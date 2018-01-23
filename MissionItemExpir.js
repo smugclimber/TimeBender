@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Model, Text, asset} from 'react-vr';
 const MissionItemExpir = props => {
-  return(
-    <View>
-    { props.state.visible == 'active' && props.state.status == 'started'?
+  let item;
+  if (props.visible == 'active' && props.status == 'started') {
     item = <View>
+
       <Text
           style={{
             fontSize: 0.3,
@@ -29,9 +29,9 @@ const MissionItemExpir = props => {
         onExit={props.onExit}
         onClick={props.onClick}
       />
-    </View>
-  :
-  item =  <View>
+    </View>;
+  } else {
+    item = <View>
       <Text
           style={{
           display: 'none',
@@ -58,10 +58,13 @@ const MissionItemExpir = props => {
         onExit={props.onExit}
         onClick={props.onClick}
       />
-    </View>
+    </View>;
   }
-{item}
-</View>
-  )
+  return(
+    <View>
+      { item }
+    </View>
+    );
+
 };
 export default MissionItemExpir;

@@ -7,54 +7,18 @@ import items2 from "./items2.json";
 import items3 from "./items3.json";
 import levels from "./levels.json";
 import TimeConsole from "./TimeConsole.js";
-<<<<<<< HEAD
 import Timer from './Timer';
 import Button from './Button';
 import TextboxVr from './TextboxVr';
-import MissionItemExpirZero from './MissionItemExpirZero';
-import MissionItemExpirOne from './MissionItemExpirOne';
-import MissionItemExpirTwo from './MissionItemExpirTwo';
+import MissionItemExpir from './MissionItemExpir';
 import Score from './Score';
 import StartButton from './StartButton';
-=======
-import Timer from './Timer.js';
-import Button from './Button.js';
-import TextboxVr from './TextboxVr.js';
-import MissionItemExpir from './MissionItemExpir.js';
-import Score from './Score.js';
-import StartButton from './StartButton.js';
-
-
-    // let levelStart;
-    // if(this.state.win){
-    //   levelStart =
-    //       <View style={styles.gazeView}>
-    //         <GazeButton onClick={()=> this.increment()} duration={500}
-    //           >
-    //           {time => (
-    //             <Text style={styles.gazeText}>
-    //               {GazeButtClicked ? 'BLAST OFF!' : `YOU WON. NICE.${time}`}
-    //             </Text>
-    //           )}
-    //         </GazeButton>
-    //       </View>
-    // }else if ((!this.state.win && this.state.level === 0) || (!this.state.win && this.state.level === 1)){
-    //   <View>
-    //     <StartButton start={this.start.bind(this)} {...this.state} />
-    //   </View>
-    // }else if((!this.state.win && !this.state.level === 0) || (!this.state.win && !this.state.level === 1)){
-    //   console.log("Run workmhole here");
-    //   <View>
-    //     <Score score={this.state.score} />
-    //     <Timer timer={this.state.timer} score={this.state.score}{...this.state} />
-    //     <Button startGame={this.startGame.bind(this)} {...this.state} />
-    //   </View>
-    // }
->>>>>>> temporary
 
 const vrTextboxContent =
   'The game Time Console is not available!';
+
 const itemsArray = [ items0, items0, items0, items1, items2, items3];
+
 class TimeBender extends React.Component {
     state = {
           level: 0,
@@ -75,21 +39,10 @@ class TimeBender extends React.Component {
           introduced: false,
           rotation: 130
         };
+
     startTimer = this.startTimer.bind(this);
     _toggleDisplay = this.toggleDisplay.bind(this);
     lastUpdate = Date.now();
-<<<<<<< HEAD
-    animateProgress = this.animateProgress.bind(this);
-    stopProgress = this.stopProgress.bind(this);
-    onGaze = this.onGaze.bind(this);
-    rotate = this.rotate.bind(this);
-    start = this.start.bind(this);
-
-   // componentDidMount() {
-   //    this.rotate();
-   //  }
-
-=======
 
     stopProgressZero = this.stopProgress.bind(this);
     onGazeZero = this.onGazeZero.bind(this);
@@ -98,15 +51,15 @@ class TimeBender extends React.Component {
     animateProgressOne = this.animateProgressOne.bind(this);
     onGazeTwo = this.onGazeTwo.bind(this);
     animateProgressTwo = this.animateProgressTwo.bind(this);
->>>>>>> temporary
+
 
     rotate = this.rotate.bind(this);
     start = this.start.bind(this);
    // componentDidMount() {
    //    this.rotate();
    //  }
+
    rotate() {
-      const rando = Math.floor(Math.random() * 7);
       const now = Date.now();
       const delta = now - this.lastUpdate;
       rotate = this.rotate.bind(this);
@@ -116,20 +69,6 @@ class TimeBender extends React.Component {
       });
       this.frameHandle = requestAnimationFrame(this.rotate);
     }
-
-    foundItem = (itemIndex) => {
-      console.log("Hello, item index: "+ itemIndex);
-      const nextItems = this.state.items;
-      console.log("json copy: "+ nextItems);
-      nextItems[itemIndex].found = true;
-      this.setState({items: nextItems}, () => {
-        const nextState = {
-          items: this.state.items
-        };
-        //socket.emit('updateState', nextState);
-        console.log("Found: "+this.state.items[itemIndex].found);
-      });
-    };
 
    componentDidUpdate(){
     switch (this.state.status) {
@@ -141,6 +80,7 @@ class TimeBender extends React.Component {
           break;
       }
   }
+
    toggleDisplay() {
     if (VrHeadModel.inVR()) {
       this.setState({renderVrTextbox: !this.state.renderVrTextbox});
@@ -149,6 +89,7 @@ class TimeBender extends React.Component {
       NativeModules.DomOverlayModule.openOverlay(this.state.items);
     }
   }
+
   startTimer(){
   let x = this.state.timer
   if(x === 0){
@@ -166,37 +107,17 @@ class TimeBender extends React.Component {
     this.setState({timer: x})
     }
   }
+
   startGame(){
     this.setState({transitionComplete:false})
     this.timer = setInterval(this.startTimer,1000);
     this.setState({status: 'started'})
     this.setState({introduced:true});
   }
-<<<<<<< HEAD
 
-  start(){
-   
-   level = (this.state.level + 1)
-   
-   this.setState({level: level})
-
-  }
-
-=======
   start(){
    level = (this.state.level += 1)
    this.setState({level: level})
-  }
->>>>>>> temporary
-  animateProgress() {
-    console.log("Progress helloo");
-    this.timeout = setTimeout(this.onGaze, 1000);
-    // begin animation
-  }
-  stopProgress() {
-    clearTimeout(this.timeout);
-    this.timeout = null;
-    // end animation
   }
 
   onGazeZero(){
@@ -208,9 +129,7 @@ class TimeBender extends React.Component {
   if(this.state.score == 3 && this.state.status == 'started'){
     this.setState({win: true, timer: 0, status: 'stopped'})
     }
-  this.foundItem(0);
   }
-
    onGazeOne(){
   //set state which sets opacity? set opacity?
     console.log("helloo");
@@ -220,9 +139,7 @@ class TimeBender extends React.Component {
   if(this.state.score == 3 && this.state.status == 'started'){
     this.setState({win: true, timer: 0, status: 'stopped'})
     }
-    this.foundItem(1);
   }
-
    onGazeTwo(){
   //set state which sets opacity? set opacity?
     console.log("helloo");
@@ -232,14 +149,13 @@ class TimeBender extends React.Component {
   if(this.state.score == 3 && this.state.status == 'started'){
     this.setState({win: true, timer: 0, status: 'stopped'})
     }
-    this.foundItem(2);
   }
 
   increment(){
-    console.log("It incremented!");
     this.state.level +=1;
    return this.setState({status: 'stopped', timer: levels[this.state.level].timer, items: itemsArray[this.state.level], visibleZero: 'active', visibleOne: 'active', visibleTwo: 'active', score: 0, win: false});
   }
+
   //begin object gaze button functions
   animateProgressZero() {
     this.timeout = setTimeout(this.onGazeZero, 1000);
@@ -282,6 +198,30 @@ class TimeBender extends React.Component {
 // }
 // end item disappear button
   render() {
+    console.log("Level is: "+this.state.level)
+
+    let transition;
+    let storyIntro;
+    const changeTransition = () => {
+      this.setState({transitionComplete:true})
+    }
+    const storyIntroduced = () => {
+      this.setState({introduced:false})
+    }
+    if (this.state.transitionComplete){
+      transition = <Pano source={asset(levels[this.state.level].image)}/>;
+    } else {
+      transition = <VideoPano
+      source={{uri: '/static_assets/wormhole.mov'}}
+      muted={true}
+      onEnded={changeTransition}
+      />;
+    }
+    if (this.state.introduced){
+      storyIntro = <Sound source={{uri: '/static_assets/audio/testing.m4a'}} />;
+    }else{
+      storyIntro = <Sound source={{uri: ''}} />;
+    }
     const {GazeButtClicked} = this.state
     return (
       <View style={styles.rootView}>
@@ -293,7 +233,8 @@ class TimeBender extends React.Component {
         {this.state.renderVrTextbox && <TextboxVr text={vrTextboxContent} />}
 
           <AmbientLight intensity={ 1.6 }  />
-
+          {storyIntro}
+          {transition}
           <Animated.View>
           <Model
             source={{
@@ -370,22 +311,23 @@ class TimeBender extends React.Component {
 
           <View>
             { this.state.win ?
-            <VrButton style={styles.gazeView}
-              onClick={()=>this.increment()}>
-              <Text style={styles.gazeText}>VICTORY! NEXT LEVEL?</Text>
-            </VrButton>
+              <View style={styles.gazeView}>
+                  <GazeButton onClick={()=> this.increment()} duration={500}
+                    >
+                    {time => (
+                      <Text style={styles.gazeText}>
+                        {GazeButtClicked ? 'BLAST OFF!' : `YOU WON. NICE.${time}`}
+                      </Text>
+                    )}
+                  </GazeButton>
+                </View>
                   :
             <View>
             </View>
               }
               <View>
-<<<<<<< HEAD
-              {(this.state.level === 0) ?
-                starter = 
-=======
               {(this.state.level === 0) || (this.state.level === 1) ?
                 starter =
->>>>>>> temporary
                 <View>
                 <StartButton start={this.start.bind(this)} {...this.state} />
                 </View>
@@ -397,16 +339,11 @@ class TimeBender extends React.Component {
             </View>
           }
           </View>
-<<<<<<< HEAD
-
-=======
->>>>>>> temporary
         </View>
     </View>
     );
   }
 };
-
 const styles = StyleSheet.create({
   onGaze:{
     fontSize: 0.3,
@@ -420,13 +357,11 @@ const styles = StyleSheet.create({
     borderRadius: 0.25,
     transform: [{translate: [2, 2, -4]}],
   },
-
   imageStyle:{
     width: 50,
     height: 50,
     transform: [{translate: [1, 2, -5]}]
   },
-
   invisiGaze:{
     display: 'none',
     fontSize: 0.3,
@@ -440,7 +375,6 @@ const styles = StyleSheet.create({
     borderRadius: 0.25,
     transform: [{translate: [2, 2, -4]}],
   },
-
   gazeView:{
     fontSize: 0.3,
     backgroundColor: '#fff',
@@ -453,44 +387,41 @@ const styles = StyleSheet.create({
     borderRadius: 0.25,
     transform: [{translate: [0, 1, -4]}],
   },
-
   gazeText:{
     textAlign: 'center',
     fontSize: 0.15,
     color: 'red'
   },
-
+  planeStyle:{
+    color: 'yellow',
+    transform: [{translate: [1, 2, -5]}]
+  },
   timer:{
     textAlign: 'center',
     fontSize: 0.15,
     color: '#fff',
-    transform: [{translate: [2, 0, -4]}]
+    transform: [{translate: [2, 0, -1]}]
   },
-
   rootView: {
     layoutOrigin: [0.5, 0.5],
     position: 'absolute',
   },
-
   triggerContainer: {
-    transform: [{translate: [0.24, -3.3, -4]}]
+    transform: [{translate: [0.75, -3.4, -3]}]
   },
-
   triggerButton: {
-    transform: [{rotateX: -45}],
+    transform: [{rotateX: -35}],
     borderRadius: 0.05,
-    height: 0.4,
-    width: 0.7,
+    height: 0.2,
+    width: 0.5,
     backgroundColor: '#F00',
     justifyContent: 'center',
   },
-
   triggerText: {
     alignSelf: 'center',
-    fontSize: 0.15,
+    fontSize: 0.1,
     textAlign: 'center',
     textAlignVertical: 'center',
-  }
+  },
 })
-
 AppRegistry.registerComponent('TimeBender', () => TimeBender);
