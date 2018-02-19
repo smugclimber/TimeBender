@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Clock",
+    "source": ["Clock 01.obj", "Clock 01.mtl"],
+    "texture": "df.png",
+    "translate": [50, 20, -70],
+    "scale": 0.50,
+    "rotate": [-90, 0, 0],
+    "found": false,
+    "image": "./../static_assets/images/clockLine.png",
+    "consoleImage": "./static_assets/images/clockLine.png",
+    "lit": true
+  },
+  {
+    "title": "Theobromine",
+    "source": ["Theobromine.obj", ""],
+    "texture": "theobromine.jpg",
+    "translate": [-13, -2, -15],
+    "scale": 0.5,
+    "rotate": [90, 0, 0],
+    "found": false,
+    "image": "./../static_assets/images/moleculeLine.png",
+    "consoleImage": "./static_assets/images/moleculeLine.png",
+    "lit": true
+  },
+  {
+    "title": "rocket",
+    "source": ["retro_rocket.obj", "retro_rocket.mtl"],
+    "texture": "",
+    "translate": [15, 0, -20],
+    "scale": 0.005,
+    "rotate": [-80, 0, 0],
+    "found": false,
+    "image": "./../static_assets/images/rocketLine.png",
+    "consoleImage": "./static_assets/images/rocketLine.png",
+    "lit": false
+  },
+]

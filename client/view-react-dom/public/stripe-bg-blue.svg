@@ -1,0 +1,33 @@
+<svg id="1e510af7-c50a-4743-b85e-37434d9071b6" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1500" height="1500" viewBox="0 0 1500 1500">
+  <defs>
+    <clipPath id="050b513a-8c3e-4d75-8d60-2f7cea30c06f">
+      <rect width="1500" height="1500" fill="none"/>
+    </clipPath>
+    <clipPath id="f3deedac-4a6c-4bfd-b60a-7a5a1c36fd2d">
+      <rect x="1520" width="1500" height="1500" transform="translate(1520 3020) rotate(-90)" fill="none" stroke="#f4f142" stroke-miterlimit="10"/>
+    </clipPath>
+  </defs>
+  <title>stripe-bg</title>
+  <g clip-path="url(#050b513a-8c3e-4d75-8d60-2f7cea30c06f)">
+    <g>
+      <line x1="579" y1="2079" x2="2079" y2="579" fill="none" stroke="#28fcf1" stroke-miterlimit="10" stroke-width="98"/>
+      <line x1="386.96" y1="1886.96" x2="1886.96" y2="386.96" fill="none" stroke="#28fcf1" stroke-miterlimit="10" stroke-width="98"/>
+      <line x1="194.93" y1="1694.93" x2="1694.93" y2="194.93" fill="none" stroke="#28fcf1" stroke-miterlimit="10" stroke-width="98"/>
+      <line x1="2.89" y1="1502.89" x2="1502.89" y2="2.89" fill="none" stroke="#28fcf1" stroke-miterlimit="10" stroke-width="98"/>
+      <line x1="-189.14" y1="1310.86" x2="1310.86" y2="-189.14" fill="none" stroke="#28fcf1" stroke-miterlimit="10" stroke-width="98"/>
+      <line x1="-381.18" y1="1118.82" x2="1118.82" y2="-381.18" fill="none" stroke="#28fcf1" stroke-miterlimit="10" stroke-width="98"/>
+      <line x1="-573.21" y1="926.79" x2="926.79" y2="-573.21" fill="none" stroke="#28fcf1" stroke-miterlimit="10" stroke-width="98"/>
+    </g>
+  </g>
+  <g>
+    <g clip-path="url(#f3deedac-4a6c-4bfd-b60a-7a5a1c36fd2d)">
+      <g>
+        <line x1="3022.89" y1="1497.11" x2="1522.89" y2="-2.89" fill="none" stroke="#f4f142" stroke-miterlimit="10" stroke-width="98"/>
+        <line x1="2830.86" y1="1689.14" x2="1330.86" y2="189.14" fill="none" stroke="#f4f142" stroke-miterlimit="10" stroke-width="98"/>
+        <line x1="2638.82" y1="1881.18" x2="1138.82" y2="381.18" fill="none" stroke="#f4f142" stroke-miterlimit="10" stroke-width="98"/>
+        <line x1="2446.79" y1="2073.21" x2="946.79" y2="573.21" fill="none" stroke="#f4f142" stroke-miterlimit="10" stroke-width="98"/>
+      </g>
+    </g>
+    <rect x="1520" width="1500" height="1500" transform="translate(1520 3020) rotate(-90)" fill="none" stroke="#f4f142" stroke-miterlimit="10"/>
+  </g>
+</svg>

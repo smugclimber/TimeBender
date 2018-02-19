@@ -1,0 +1,38 @@
+[
+  {
+    "title": "bomb",
+    "source": ["bomb.obj", "bomb.mtl"],
+    "texture": "",
+    "translate": [7, 2, -5],
+    "scale": 0.50,
+    "rotate": [0, 0, 0],
+    "found": false,
+    "image": "./../static_assets/images/bombLine.png",
+    "consoleImage": "./static_assets/images/bombLine.png",
+    "lit": true
+  },
+  {
+    "title": "hourglass",
+    "source": ["hour glass.obj", "hour glass.mtl"],
+    "texture": "",
+    "translate": [-5, 4, -15],
+    "scale": 0.25,
+    "rotate": [0, 0, 0],
+    "found": false,
+    "image": "./../static_assets/images/hourglassLine.png",
+    "consoleImage": "./static_assets/images/hourglassLine.png",
+    "lit": true
+  },
+  {
+    "title": "dna",
+    "source": ["dna.obj", ""],
+    "texture": "",
+    "translate": [-3, -5.2, -6],
+    "scale": 0.05,
+    "rotate": [0, 75, 0],
+    "found": false,
+    "image": "./../static_assets/images/dnaLine.png",
+    "consoleImage": "./static_assets/images/dnaLine.png",
+    "lit": true
+  },
+]

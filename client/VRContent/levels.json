@@ -1,0 +1,30 @@
+[
+  {
+    "level": 0,
+    "title": "Start Screen",
+    "image": "Start_screen.jpg",
+    "audio": "button-click.ogg",
+    "timer": 20,
+  },
+  {
+    "level": 2,
+    "title": "Museum",
+    "image": "museum.jpg",
+    "audio": "button-click.ogg",
+    "timer": 20,
+  },
+  {
+    "level": 3,
+    "title": "Island Garden",
+    "image": "island-garden.jpg",
+    "audio": "button-click.ogg",
+    "timer": 20,
+  },
+  {
+    "level": 4,
+    "title": "End Game",
+    "image": "End_Game_Scene.jpg",
+    "audio": "button-click.ogg",
+    "timer": 20,
+  }
+]

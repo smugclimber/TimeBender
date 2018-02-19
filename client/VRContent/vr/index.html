@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>view_react_vr</title>
+    <style>body { margin: 0; }</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src='https://cdn.jsdelivr.net/npm/webvr-polyfill@latest/build/webvr-polyfill.js'></script>
+    <script>
+      if (navigator.userAgent.match(/iPhone/i)){
+        var polyfill = new WebVRPolyfill();
+        navigator.getVRDisplays().then(displays => {
+          if (displays.length) {
+            vrDisplay = displays[0];
+            controls = new THREE.VRControls(camera);
+            vrDisplay.requestAnimationFrame(animate);
+          } else {
+            controls = new THREE.OrbitControls(camera);
+            requestAnimationFrame(animate);
+          }
+        });
+      }
+    </script>
+
+  </head>
+  <body>
+    <!-- When you're ready to deploy your app, update this line to point to your compiled client.bundle.js -->
+    <script src="./vr-assets/client.bundle.js"></script>
+    <script>
+      // Initialize the React VR application
+      ReactVR.init(
+        // When you're ready to deploy your app, update this line to point to
+        // your compiled index.bundle.js
+        './vr-assets/index.bundle.js',
+        // Attach it to the body tag
+        document.body
+      );
+    </script>
+  </body>
+</html>

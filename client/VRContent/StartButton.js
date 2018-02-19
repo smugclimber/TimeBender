@@ -1,0 +1,39 @@
+import React from 'react';
+import {
+  StyleSheet,
+  Text,
+  VrButton,
+  asset,
+} from 'react-vr';
+export default class StartButton extends React.Component {
+  constructor() {
+    super();
+    this.styles = StyleSheet.create({
+      button: {
+            margin: 0.05,
+        height: 0.4,
+        backgroundColor: 'red',
+        transform: [
+          {translate: [0.15, -1.8, -5]},
+          {rotateX: -45},
+        ]
+        },
+      text: {
+            fontSize: 0.2,
+            textAlign: 'center',
+            margin: 0.05,
+      },
+    });
+  }
+  render() {
+    return (
+      <VrButton style={this.styles.button}
+        onClick={this.props.start}
+          >
+        <Text style={this.styles.text}>
+          Start Game
+        </Text>
+      </VrButton>
+    );
+  }
+}
